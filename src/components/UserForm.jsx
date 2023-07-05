@@ -6,7 +6,8 @@ const UserForm = ({ addUser }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    addUser({ name, age })
+    const id = Math.floor(Math.random() * 1000)
+    addUser({ id, name, age })
   }
 
   return (
