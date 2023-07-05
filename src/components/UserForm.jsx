@@ -1,11 +1,12 @@
 import { useState } from 'react'
 
-const UserForm = () => {
+const UserForm = ({ addUser }) => {
   const [name, setName] = useState('')
-  const [age, setAge] = useState(0)
+  const [age, setAge] = useState('')
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    addUser({ name, age })
   }
 
   return (
