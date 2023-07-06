@@ -15,7 +15,7 @@ const UserForm = ({ addUser }) => {
 
   return (
     <form className='userForm' onSubmit={handleSubmit}>
-      <h1>Add User</h1>
+      <h1>Users List</h1>
       <div className='form-fields'>
         <div className='form-group'>
           <label htmlFor='name'>Name</label>

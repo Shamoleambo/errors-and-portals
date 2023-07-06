@@ -1,8 +1,10 @@
 .userForm {
   width: 40%;
-  background-color: red;
+  background-color: rgb(227, 66, 227);
+  box-shadow: 0 0 5px rgb(106, 1, 133);
   margin: 3rem;
   padding: 1rem;
+  border: 2px solid black;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -14,7 +16,26 @@
 }
 
 .userForm button {
-  margin: 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  color: white;
+  background-color: blueviolet;
+  width: 50%;
+  height: 3rem;
+  margin: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.userForm button:hover {
+  color: blueviolet;
+  background-color: white;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px black;
+}
+
+.userForm button:active {
+  color: white;
+  background-color: blueviolet;
 }
 
 .form-fields {
@@ -30,5 +51,18 @@
 }
 
 .form-group label {
+  font-weight: bold;
   margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  font-weight: bold;
+  width: 100%;
+  height: 1.5rem;
+  border-radius: 0.2rem;
+  border: none;
+}
+
+.form-group input:focus {
+  outline: none;
 }
