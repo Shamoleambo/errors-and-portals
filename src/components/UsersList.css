@@ -1,0 +1,28 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  padding: 0;
+  width: 50%;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.list-item {
+  width: 60%;
+  padding-left: 5rem;
+  list-style: none;
+  margin: 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.list-item:nth-child(1) {
+  margin-top: 2.4rem;
+}
+
+.list-item:last-child {
+  margin-bottom: 2.4rem;
+}
