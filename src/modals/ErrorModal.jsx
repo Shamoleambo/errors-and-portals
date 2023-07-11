@@ -5,16 +5,26 @@ const Backdrop = ({ onConfirm }) => {
   return <div className='backdrop' onClick={onConfirm}></div>
 }
 
-const OverlayModal = ({ onConfirm }) => {
+const OverlayModal = ({ onConfirm, errorType }) => {
   return (
-    <div className='errorModal'>
-      <p className='message'>Name and Age must not be empty!</p>
-      <button onClick={onConfirm}>OK</button>
-    </div>
+    <>
+      {errorType === 'empty' && (
+        <div className='errorModal'>
+          <p className='message'>Name and Age must not be empty!</p>
+          <button onClick={onConfirm}>OK</button>
+        </div>
+      )}
+      {errorType === 'age' && (
+        <div className='errorModal'>
+          <p className='message'>Age must be bigger than 0</p>
+          <button onClick={onConfirm}>OK</button>
+        </div>
+      )}
+    </>
   )
 }
 
-const ErrorModal = ({ onConfirm }) => {
+const ErrorModal = ({ onConfirm, errorType }) => {
   return (
     <>
       {createPortal(
@@ -22,7 +32,7 @@ const ErrorModal = ({ onConfirm }) => {
         document.getElementById('backdrop-root')
       )}
       {createPortal(
-        <OverlayModal onConfirm={onConfirm} />,
+        <OverlayModal onConfirm={onConfirm} errorType={errorType} />,
         document.getElementById('overlay-root')
       )}
     </>

@@ -7,9 +7,11 @@ import './App.css'
 function App() {
   const [usersList, setUsersList] = useState([])
   const [error, setError] = useState(false)
+  const [errorType, setErrorType] = useState('')
 
   const handleError = () => {
     setError(false)
+    setErrorType('')
   }
 
   const addUser = (user) => {
@@ -18,6 +20,11 @@ function App() {
 
     if (nameIsEmpty || ageIsEmpty) {
       setError(true)
+      setErrorType('empty')
+      return
+    } else if (+user.age < 1) {
+      setError(true)
+      setErrorType('age')
       return
     }
 
@@ -25,7 +32,7 @@ function App() {
   }
   return (
     <div className='app'>
-      {error && <ErrorModal onConfirm={handleError} />}
+      {error && <ErrorModal onConfirm={handleError} errorType={errorType} />}
       <UserForm addUser={addUser} />
       <UsersList usersList={usersList} />
     </div>
